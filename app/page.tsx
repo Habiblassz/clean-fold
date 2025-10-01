@@ -1,103 +1,91 @@
-import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+export default function HomePage() {
+	return (
+		<div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-blue-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 flex flex-col">
+			{/* Background Elements */}
+			<div className="absolute inset-0 overflow-hidden">
+				<div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full blur-3xl opacity-30 animate-float"></div>
+				<div
+					className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-200 rounded-full blur-3xl opacity-30 animate-float"
+					style={{ animationDelay: "2s" }}></div>
+				<div
+					className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-20 animate-float"
+					style={{ animationDelay: "4s" }}></div>
+			</div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+			{/* Main Content */}
+			<main className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-12">
+				{/* Hero Section */}
+				<div className="text-center max-w-2xl mx-auto animate-scale-in">
+					{/* Logo/Brand */}
+					<div className="mb-8">
+						<div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+							<svg
+								className="w-10 h-10 text-white"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24">
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth={2}
+									d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+								/>
+							</svg>
+						</div>
+						<h1 className="text-5xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4">
+							Fresh<span className="text-gradient">Fold</span>
+						</h1>
+						<p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-md mx-auto leading-relaxed">
+							Experience laundry care reimagined with our premium, eco-friendly
+							service
+						</p>
+					</div>
+
+					{/* Feature Highlights */}
+					<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+						{[
+							{ icon: "⚡", title: "Fast Delivery", desc: "Within 24 hours" },
+							{
+								icon: "🌱",
+								title: "Eco Friendly",
+								desc: "Sustainable methods",
+							},
+							{ icon: "⭐", title: "Premium Care", desc: "Expert handling" },
+						].map((feature, index) => (
+							<div
+								key={index}
+								className="bg-white/70 dark:bg-gray-800/50 backdrop-blur-md border border-white/20 dark:border-gray-700/50 rounded-xl p-4 text-center shadow-sm animate-slide-up"
+								style={{ animationDelay: `${index * 0.1}s` }}>
+								<div className="text-2xl mb-2">{feature.icon}</div>
+								<h3 className="font-semibold text-gray-800 dark:text-white mb-1">
+									{feature.title}
+								</h3>
+								<p className="text-sm text-gray-600 dark:text-gray-400">
+									{feature.desc}
+								</p>
+							</div>
+						))}
+					</div>
+
+					{/* Auth Buttons */}
+					<div
+						className="space-y-4 max-w-sm mx-auto animate-slide-up"
+						style={{ animationDelay: "0.3s" }}>
+						<Link
+							href="/signin"
+							className="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 block text-center text-lg">
+							Get Started
+						</Link>
+						<Link
+							href="/signin"
+							className="bg-white/80 dark:bg-gray-700/50 text-gray-700 dark:text-white font-semibold py-4 px-8 rounded-xl border border-gray-200 dark:border-gray-600 backdrop-blur-md hover:bg-white dark:hover:bg-gray-700 transition-all duration-300 hover:scale-105 active:scale-95 block text-center text-lg">
+							Sign In
+						</Link>
+					</div>
+				</div>
+			</main>
+		</div>
+	);
 }
