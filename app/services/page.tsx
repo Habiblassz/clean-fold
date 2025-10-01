@@ -163,8 +163,6 @@ export default function ServicesPage() {
 							Continue {totalItems > 0 && `(${totalItems})`}
 						</Link>
 					</div>
-
-					<Navigation active="services" />
 				</div>
 			</footer>
 		</div>
@@ -268,32 +266,5 @@ function ServiceCard({
 				</div>
 			</div>
 		</div>
-	);
-}
-
-function Navigation({ active }: { active: string }) {
-	const navItems = [
-		{ name: "Home", href: "/", icon: "🏠" },
-		{ name: "Services", href: "/services", icon: "🧺" },
-		{ name: "Schedule", href: "/schedule", icon: "📅" },
-		{ name: "Orders", href: "/tracking", icon: "📦" },
-	];
-
-	return (
-		<nav className="flex justify-around">
-			{navItems.map((item) => (
-				<Link
-					key={item.name}
-					href={item.href}
-					className={`flex flex-col items-center gap-1 p-2 rounded-xl transition-all duration-300 ${
-						active === item.name.toLowerCase()
-							? "text-blue-600 bg-blue-50/50 dark:bg-blue-900/20"
-							: "text-gray-600 dark:text-gray-400 hover:text-blue-600 hover:bg-gray-50/50 dark:hover:bg-gray-800/50"
-					}`}>
-					<span className="text-xl">{item.icon}</span>
-					<span className="text-xs font-medium">{item.name}</span>
-				</Link>
-			))}
-		</nav>
 	);
 }
