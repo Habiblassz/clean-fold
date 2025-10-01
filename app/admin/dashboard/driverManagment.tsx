@@ -41,7 +41,10 @@ export default function DriversManagement() {
 									<select
 										value={driver.status}
 										onChange={(e) =>
-											updateDriverStatus(driver.id, e.target.value as any)
+											updateDriverStatus(
+												driver.id,
+												e.target.value as "available" | "busy" | "offline"
+											)
 										}
 										className={`text-xs font-medium rounded ${
 											driver.status === "available"

@@ -12,7 +12,11 @@ export default function ServicesManagement() {
 		estimatedTime: "24 hours",
 	});
 
-	const handleSave = (serviceId: string, field: string, value: any) => {
+	const handleSave = (
+		serviceId: string,
+		field: string,
+		value: string | number
+	) => {
 		updateService(serviceId, { [field]: value });
 	};
 
