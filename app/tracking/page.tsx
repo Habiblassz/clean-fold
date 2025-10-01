@@ -11,14 +11,14 @@ export default function TrackingPage() {
 		order.services.filter((s) => s.quantity > 0).length === 0
 	) {
 		return (
-			<div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-blue-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 flex items-center justify-center">
+			<div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-blue-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 flex items-center justify-center px-4">
 				<div className="text-center">
-					<h1 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
+					<h1 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white mb-4">
 						No Order Found
 					</h1>
 					<Link
 						href="/services"
-						className="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+						className="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base">
 						Start New Order
 					</Link>
 				</div>
@@ -54,16 +54,16 @@ export default function TrackingPage() {
 	};
 
 	return (
-		<div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-blue-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 pb-24">
+		<div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-blue-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 pb-20 sm:pb-24">
 			{/* Header */}
 			<header className="bg-white/70 dark:bg-gray-800/50 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-700/50 sticky top-0 z-20">
-				<div className="max-w-4xl mx-auto px-6 py-4">
+				<div className="max-w-4xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
 					<div className="flex items-center justify-between">
 						<Link
 							href="/summary"
-							className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors">
+							className="flex items-center gap-2 sm:gap-3 text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors">
 							<svg
-								className="w-5 h-5"
+								className="w-4 h-4 sm:w-5 sm:h-5"
 								fill="none"
 								stroke="currentColor"
 								viewBox="0 0 24 24">
@@ -74,38 +74,40 @@ export default function TrackingPage() {
 									d="M15 19l-7-7 7-7"
 								/>
 							</svg>
-							<span className="font-medium">Back</span>
+							<span className="font-medium text-sm sm:text-base">Back</span>
 						</Link>
-						<h1 className="text-2xl font-bold text-gray-800 dark:text-white">
+						<h1 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white">
 							Order #12345
 						</h1>
-						<div className="w-20"></div>
+						<div className="w-12 sm:w-20"></div>
 					</div>
 				</div>
 			</header>
 
-			<main className="max-w-4xl mx-auto px-6 py-8">
+			<main className="max-w-4xl mx-auto px-4 sm:px-6 py-4 sm:py-8">
 				{/* Progress Card */}
-				<div className="bg-white/70 dark:bg-gray-800/50 backdrop-blur-md border border-white/20 dark:border-gray-700/50 rounded-2xl p-6 mb-6 animate-scale-in">
-					<div className="flex items-center justify-between mb-4">
+				<div className="bg-white/70 dark:bg-gray-800/50 backdrop-blur-md border border-white/20 dark:border-gray-700/50 rounded-2xl p-4 sm:p-6 mb-4 sm:mb-6 animate-scale-in">
+					<div className="flex items-center justify-between mb-3 sm:mb-4">
 						<div>
-							<h2 className="text-xl font-bold text-gray-800 dark:text-white">
+							<h2 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white">
 								Order Confirmed
 							</h2>
-							<p className="text-gray-600 dark:text-gray-400">
+							<p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
 								We&apos;re preparing your laundry
 							</p>
 						</div>
 						<div className="text-right">
-							<div className="text-2xl font-bold text-blue-600">25%</div>
-							<div className="text-sm text-gray-500 dark:text-gray-400">
+							<div className="text-lg sm:text-2xl font-bold text-blue-600">
+								25%
+							</div>
+							<div className="text-xs text-gray-500 dark:text-gray-400">
 								Complete
 							</div>
 						</div>
 					</div>
-					<div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+					<div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 sm:h-3">
 						<div
-							className="bg-gradient-to-r from-blue-500 to-purple-500 h-3 rounded-full transition-all duration-500"
+							className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 sm:h-3 rounded-full transition-all duration-500"
 							style={{ width: "25%" }}></div>
 					</div>
 					<div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-2">
@@ -117,8 +119,8 @@ export default function TrackingPage() {
 				</div>
 
 				{/* Order Summary */}
-				<div className="bg-white/70 dark:bg-gray-800/50 backdrop-blur-md border border-white/20 dark:border-gray-700/50 rounded-2xl p-6 mb-6 animate-slide-up">
-					<h2 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
+				<div className="bg-white/70 dark:bg-gray-800/50 backdrop-blur-md border border-white/20 dark:border-gray-700/50 rounded-2xl p-4 sm:p-6 mb-4 sm:mb-6 animate-slide-up">
+					<h2 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white mb-3 sm:mb-4">
 						Your Order
 					</h2>
 					<div className="space-y-3">
@@ -127,19 +129,19 @@ export default function TrackingPage() {
 								key={service.id}
 								className="flex items-center justify-between">
 								<div className="flex items-center gap-3">
-									<div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center text-lg">
+									<div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center text-sm sm:text-lg">
 										{service.icon}
 									</div>
 									<div>
-										<h3 className="font-semibold text-gray-800 dark:text-white">
+										<h3 className="font-semibold text-gray-800 dark:text-white text-sm sm:text-base">
 											{service.name}
 										</h3>
-										<p className="text-sm text-gray-600 dark:text-gray-400">
+										<p className="text-xs text-gray-600 dark:text-gray-400">
 											{service.quantity} {service.unit}
 										</p>
 									</div>
 								</div>
-								<span className="font-semibold text-gray-800 dark:text-white">
+								<span className="font-semibold text-gray-800 dark:text-white text-sm sm:text-base">
 									${(service.price * service.quantity).toFixed(2)}
 								</span>
 							</div>
@@ -149,15 +151,17 @@ export default function TrackingPage() {
 
 				{/* Schedule Details */}
 				<div
-					className="bg-white/70 dark:bg-gray-800/50 backdrop-blur-md border border-white/20 dark:border-gray-700/50 rounded-2xl p-6 animate-slide-up"
+					className="bg-white/70 dark:bg-gray-800/50 backdrop-blur-md border border-white/20 dark:border-gray-700/50 rounded-2xl p-4 sm:p-6 animate-slide-up"
 					style={{ animationDelay: "0.1s" }}>
-					<h2 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
+					<h2 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white mb-3 sm:mb-4">
 						Delivery Details
 					</h2>
-					<div className="space-y-4">
+					<div className="space-y-3 sm:space-y-4">
 						<div className="flex justify-between">
-							<span className="text-gray-600 dark:text-gray-400">Pickup</span>
-							<span className="font-semibold text-gray-800 dark:text-white text-right">
+							<span className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+								Pickup
+							</span>
+							<span className="font-semibold text-gray-800 dark:text-white text-right text-sm sm:text-base">
 								{formatDisplayDate(order.schedule.pickup.date)}
 								<br />
 								<span className="text-blue-600">
@@ -166,8 +170,10 @@ export default function TrackingPage() {
 							</span>
 						</div>
 						<div className="flex justify-between">
-							<span className="text-gray-600 dark:text-gray-400">Delivery</span>
-							<span className="font-semibold text-gray-800 dark:text-white text-right">
+							<span className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+								Delivery
+							</span>
+							<span className="font-semibold text-gray-800 dark:text-white text-right text-sm sm:text-base">
 								{formatDisplayDate(order.schedule.delivery.date)}
 								<br />
 								<span className="text-purple-600">
@@ -176,16 +182,18 @@ export default function TrackingPage() {
 							</span>
 						</div>
 						<div className="flex justify-between">
-							<span className="text-gray-600 dark:text-gray-400">
+							<span className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
 								Service Type
 							</span>
-							<span className="font-semibold text-gray-800 dark:text-white">
+							<span className="font-semibold text-gray-800 dark:text-white text-sm sm:text-base">
 								{order.ecoFriendly ? "Eco-friendly" : "Standard"}
 							</span>
 						</div>
-						<div className="border-t border-gray-200 dark:border-gray-600 pt-4 flex justify-between">
-							<span className="text-gray-600 dark:text-gray-400">Total</span>
-							<span className="text-xl font-bold text-blue-600">
+						<div className="border-t border-gray-200 dark:border-gray-600 pt-3 sm:pt-4 flex justify-between">
+							<span className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+								Total
+							</span>
+							<span className="text-lg sm:text-xl font-bold text-blue-600">
 								${total.toFixed(2)}
 							</span>
 						</div>

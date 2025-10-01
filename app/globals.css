@@ -86,3 +86,18 @@
 		transform: translateY(-10px);
 	}
 }
+
+/* Mobile-first responsive improvements */
+@layer components {
+	.container-mobile {
+		@apply px-4 sm:px-6 lg:px-8;
+	}
+
+	.text-mobile-responsive {
+		@apply text-sm sm:text-base lg:text-lg;
+	}
+
+	.heading-mobile-responsive {
+		@apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+	}
+}

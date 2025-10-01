@@ -42,22 +42,22 @@ export default function SignInPage() {
 	};
 
 	return (
-		<div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-blue-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 flex items-center justify-center px-6 py-12">
-			{/* Background Elements */}
+		<div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-blue-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 flex items-center justify-center px-4 sm:px-6 py-8 sm:py-12">
+			{/* Background Elements - Mobile Adjusted */}
 			<div className="absolute inset-0 overflow-hidden">
-				<div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full blur-3xl opacity-30 animate-float"></div>
+				<div className="absolute -top-20 -right-20 w-40 h-40 sm:-top-40 sm:-right-40 sm:w-80 sm:h-80 bg-blue-200 rounded-full blur-3xl opacity-30 animate-float"></div>
 				<div
-					className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-200 rounded-full blur-3xl opacity-30 animate-float"
+					className="absolute -bottom-20 -left-20 w-40 h-40 sm:-bottom-40 sm:-left-40 sm:w-80 sm:h-80 bg-purple-200 rounded-full blur-3xl opacity-30 animate-float"
 					style={{ animationDelay: "2s" }}></div>
 			</div>
 
-			<div className="relative z-10 w-full max-w-md">
+			<div className="relative z-10 w-full max-w-md mx-4">
 				{/* Header */}
-				<div className="text-center mb-8">
-					<Link href="/" className="inline-block mb-6">
-						<div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto shadow-lg">
+				<div className="text-center mb-6 sm:mb-8">
+					<Link href="/" className="inline-block mb-4 sm:mb-6">
+						<div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto shadow-lg">
 							<svg
-								className="w-8 h-8 text-white"
+								className="w-6 h-6 sm:w-8 sm:h-8 text-white"
 								fill="none"
 								stroke="currentColor"
 								viewBox="0 0 24 24">
@@ -70,36 +70,23 @@ export default function SignInPage() {
 							</svg>
 						</div>
 					</Link>
-					<h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
+					<h1 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white mb-2">
 						Welcome Back
 					</h1>
-					<p className="text-gray-600 dark:text-gray-400">
+					<p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
 						Sign in to your FreshFold account
 					</p>
 				</div>
 
-				{/* Demo Credentials */}
-				{/* <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-xl p-4 mb-6">
-					<h3 className="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">
-						Demo Credentials
-					</h3>
-					<div className="text-sm text-yellow-700 dark:text-yellow-300 space-y-1">
-						<p>
-							<strong>Customer:</strong> customer@freshfold.com / password
-						</p>
-						<p>
-							<strong>Admin:</strong> admin@freshfold.com / password
-						</p>
-					</div>
-				</div> */}
-
 				{/* Sign In Form */}
 				<form
 					onSubmit={handleSubmit}
-					className="bg-white/70 dark:bg-gray-800/50 backdrop-blur-md rounded-2xl p-6 shadow-soft">
+					className="bg-white/70 dark:bg-gray-800/50 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-soft">
 					{error && (
-						<div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4 mb-4">
-							<p className="text-red-700 dark:text-red-300 text-sm">{error}</p>
+						<div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-3 sm:p-4 mb-4">
+							<p className="text-red-700 dark:text-red-300 text-xs sm:text-sm">
+								{error}
+							</p>
 						</div>
 					)}
 
@@ -116,7 +103,7 @@ export default function SignInPage() {
 								id="email"
 								value={email}
 								onChange={(e) => setEmail(e.target.value)}
-								className="w-full px-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+								className="w-full px-3 sm:px-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
 								placeholder="your@email.com"
 								required
 							/>
@@ -134,7 +121,7 @@ export default function SignInPage() {
 								id="password"
 								value={password}
 								onChange={(e) => setPassword(e.target.value)}
-								className="w-full px-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+								className="w-full px-3 sm:px-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
 								placeholder="••••••••"
 								required
 							/>
@@ -145,14 +132,14 @@ export default function SignInPage() {
 					<button
 						type="submit"
 						disabled={isLoading}
-						className={`w-full mt-6 py-4 px-6 rounded-xl text-white font-semibold shadow-lg transition-all duration-300 ${
+						className={`w-full mt-4 sm:mt-6 py-3 sm:py-4 px-6 rounded-xl text-white font-semibold shadow-lg transition-all duration-300 text-sm sm:text-base ${
 							isLoading
 								? "bg-gray-400 cursor-not-allowed"
 								: "bg-gradient-to-r from-blue-500 to-purple-500 hover:shadow-xl hover:scale-105"
 						}`}>
 						{isLoading ? (
 							<div className="flex items-center justify-center">
-								<div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
+								<div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
 								Signing In...
 							</div>
 						) : (
@@ -161,7 +148,7 @@ export default function SignInPage() {
 					</button>
 
 					{/* Sign Up Link */}
-					<p className="text-center mt-6 text-gray-600 dark:text-gray-400">
+					<p className="text-center mt-4 sm:mt-6 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
 						Don&apos;t have an account?{" "}
 						<Link
 							href="/signup"
@@ -170,22 +157,6 @@ export default function SignInPage() {
 						</Link>
 					</p>
 				</form>
-
-				{/* Features */}
-				{/* <div className="mt-8 grid grid-cols-2 gap-4 text-center">
-					<div className="bg-white/50 dark:bg-gray-800/30 rounded-xl p-4 backdrop-blur-sm">
-						<div className="text-2xl mb-2">🔒</div>
-						<p className="text-sm font-medium text-gray-700 dark:text-gray-300">
-							Secure
-						</p>
-					</div>
-					<div className="bg-white/50 dark:bg-gray-800/30 rounded-xl p-4 backdrop-blur-sm">
-						<div className="text-2xl mb-2">⚡</div>
-						<p className="text-sm font-medium text-gray-700 dark:text-gray-300">
-							Fast
-						</p>
-					</div>
-				</div> */}
 			</div>
 		</div>
 	);

@@ -70,16 +70,16 @@ export default function SchedulePage() {
 	const deliveryMinDate = addDays(selectedPickupDate, 1);
 
 	return (
-		<div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-blue-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 pb-24">
+		<div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-blue-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 pb-20 sm:pb-24">
 			{/* Header */}
 			<header className="bg-white/70 dark:bg-gray-800/50 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-700/50 sticky top-0 z-20">
-				<div className="max-w-6xl mx-auto px-6 py-4">
+				<div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
 					<div className="flex items-center justify-between">
 						<Link
 							href="/services"
-							className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors">
+							className="flex items-center gap-2 sm:gap-3 text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors">
 							<svg
-								className="w-5 h-5"
+								className="w-4 h-4 sm:w-5 sm:h-5"
 								fill="none"
 								stroke="currentColor"
 								viewBox="0 0 24 24">
@@ -90,31 +90,31 @@ export default function SchedulePage() {
 									d="M15 19l-7-7 7-7"
 								/>
 							</svg>
-							<span className="font-medium">Back</span>
+							<span className="font-medium text-sm sm:text-base">Back</span>
 						</Link>
-						<h1 className="text-2xl font-bold text-gray-800 dark:text-white">
+						<h1 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white">
 							Schedule Pickup & Delivery
 						</h1>
-						<div className="w-20"></div>
+						<div className="w-12 sm:w-20"></div>
 					</div>
 				</div>
 			</header>
 
-			<main className="max-w-6xl mx-auto px-6 py-8">
-				<div className="grid lg:grid-cols-2 gap-8">
+			<main className="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-8">
+				<div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
 					{/* Pickup Section */}
 					<div className="animate-slide-up">
-						<div className="bg-white/70 dark:bg-gray-800/50 backdrop-blur-md border border-white/20 dark:border-gray-700/50 rounded-2xl p-6 mb-6">
-							<h2 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
+						<div className="bg-white/70 dark:bg-gray-800/50 backdrop-blur-md border border-white/20 dark:border-gray-700/50 rounded-2xl p-4 sm:p-6 mb-4 sm:mb-6">
+							<h2 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white mb-3 sm:mb-4">
 								📦 Pickup Date & Time
 							</h2>
 
 							{/* Selected Date Display */}
-							<div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-4 mb-4 text-center">
-								<p className="text-lg font-semibold text-blue-600">
+							<div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-3 sm:p-4 mb-3 sm:mb-4 text-center">
+								<p className="text-base sm:text-lg font-semibold text-blue-600">
 									{formatDate(selectedPickupDate)}
 								</p>
-								<p className="text-sm text-gray-600 dark:text-gray-400">
+								<p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
 									{selectedPickupDate.toLocaleDateString("en-US", {
 										weekday: "long",
 										year: "numeric",
@@ -133,17 +133,17 @@ export default function SchedulePage() {
 						</div>
 
 						{/* Pickup Time Slots */}
-						<div className="bg-white/70 dark:bg-gray-800/50 backdrop-blur-md border border-white/20 dark:border-gray-700/50 rounded-2xl p-6">
-							<h3 className="font-semibold text-gray-800 dark:text-white mb-4">
+						<div className="bg-white/70 dark:bg-gray-800/50 backdrop-blur-md border border-white/20 dark:border-gray-700/50 rounded-2xl p-4 sm:p-6">
+							<h3 className="font-semibold text-gray-800 dark:text-white mb-3 sm:mb-4 text-sm sm:text-base">
 								Select Pickup Time
 							</h3>
-							<div className="grid grid-cols-3 gap-3">
+							<div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
 								{pickupTimeSlots.map((time) => (
 									<button
 										key={time}
 										type="button"
 										onClick={() => setSelectedPickupTime(time)}
-										className={`py-3 rounded-lg transition-all duration-300 ${
+										className={`py-2 sm:py-3 rounded-lg transition-all duration-300 text-xs sm:text-sm ${
 											selectedPickupTime === time
 												? "bg-blue-500 text-white shadow-lg scale-105"
 												: "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-blue-900/30"
@@ -157,17 +157,17 @@ export default function SchedulePage() {
 
 					{/* Delivery Section */}
 					<div className="animate-slide-up" style={{ animationDelay: "0.1s" }}>
-						<div className="bg-white/70 dark:bg-gray-800/50 backdrop-blur-md border border-white/20 dark:border-gray-700/50 rounded-2xl p-6 mb-6">
-							<h2 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
+						<div className="bg-white/70 dark:bg-gray-800/50 backdrop-blur-md border border-white/20 dark:border-gray-700/50 rounded-2xl p-4 sm:p-6 mb-4 sm:mb-6">
+							<h2 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white mb-3 sm:mb-4">
 								🚗 Delivery Date & Time
 							</h2>
 
 							{/* Selected Date Display */}
-							<div className="bg-purple-50 dark:bg-purple-900/20 rounded-xl p-4 mb-4 text-center">
-								<p className="text-lg font-semibold text-purple-600">
+							<div className="bg-purple-50 dark:bg-purple-900/20 rounded-xl p-3 sm:p-4 mb-3 sm:mb-4 text-center">
+								<p className="text-base sm:text-lg font-semibold text-purple-600">
 									{formatDate(selectedDeliveryDate)}
 								</p>
-								<p className="text-sm text-gray-600 dark:text-gray-400">
+								<p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
 									{selectedDeliveryDate.toLocaleDateString("en-US", {
 										weekday: "long",
 										year: "numeric",
@@ -186,17 +186,17 @@ export default function SchedulePage() {
 						</div>
 
 						{/* Delivery Time Slots */}
-						<div className="bg-white/70 dark:bg-gray-800/50 backdrop-blur-md border border-white/20 dark:border-gray-700/50 rounded-2xl p-6">
-							<h3 className="font-semibold text-gray-800 dark:text-white mb-4">
+						<div className="bg-white/70 dark:bg-gray-800/50 backdrop-blur-md border border-white/20 dark:border-gray-700/50 rounded-2xl p-4 sm:p-6">
+							<h3 className="font-semibold text-gray-800 dark:text-white mb-3 sm:mb-4 text-sm sm:text-base">
 								Select Delivery Time
 							</h3>
-							<div className="grid grid-cols-3 gap-3">
+							<div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
 								{deliveryTimeSlots.map((time) => (
 									<button
 										key={time}
 										type="button"
 										onClick={() => setSelectedDeliveryTime(time)}
-										className={`py-3 rounded-lg transition-all duration-300 ${
+										className={`py-2 sm:py-3 rounded-lg transition-all duration-300 text-xs sm:text-sm ${
 											selectedDeliveryTime === time
 												? "bg-purple-500 text-white shadow-lg scale-105"
 												: "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-900/30"
@@ -210,32 +210,32 @@ export default function SchedulePage() {
 				</div>
 
 				{/* Schedule Summary */}
-				<div className="bg-white/70 dark:bg-gray-800/50 backdrop-blur-md border border-white/20 dark:border-gray-700/50 rounded-2xl p-6 mt-8 animate-scale-in">
-					<h2 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
+				<div className="bg-white/70 dark:bg-gray-800/50 backdrop-blur-md border border-white/20 dark:border-gray-700/50 rounded-2xl p-4 sm:p-6 mt-6 sm:mt-8 animate-scale-in">
+					<h2 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white mb-3 sm:mb-4">
 						Schedule Summary
 					</h2>
-					<div className="grid md:grid-cols-2 gap-6">
-						<div className="text-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
-							<div className="text-2xl mb-2">📦</div>
-							<h3 className="font-semibold text-gray-800 dark:text-white">
+					<div className="grid md:grid-cols-2 gap-4 sm:gap-6">
+						<div className="text-center p-3 sm:p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
+							<div className="text-xl sm:text-2xl mb-2">📦</div>
+							<h3 className="font-semibold text-gray-800 dark:text-white text-sm sm:text-base">
 								Pickup
 							</h3>
-							<p className="text-lg font-bold text-blue-600">
+							<p className="text-base sm:text-lg font-bold text-blue-600">
 								{formatDate(selectedPickupDate)}
 							</p>
-							<p className="text-gray-600 dark:text-gray-400">
+							<p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
 								{selectedPickupTime}
 							</p>
 						</div>
-						<div className="text-center p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl">
-							<div className="text-2xl mb-2">🚗</div>
-							<h3 className="font-semibold text-gray-800 dark:text-white">
+						<div className="text-center p-3 sm:p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl">
+							<div className="text-xl sm:text-2xl mb-2">🚗</div>
+							<h3 className="font-semibold text-gray-800 dark:text-white text-sm sm:text-base">
 								Delivery
 							</h3>
-							<p className="text-lg font-bold text-purple-600">
+							<p className="text-base sm:text-lg font-bold text-purple-600">
 								{formatDate(selectedDeliveryDate)}
 							</p>
-							<p className="text-gray-600 dark:text-gray-400">
+							<p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
 								{selectedDeliveryTime}
 							</p>
 						</div>
@@ -245,13 +245,13 @@ export default function SchedulePage() {
 
 			{/* Fixed Footer */}
 			<footer className="fixed bottom-0 left-0 right-0 bg-white/70 dark:bg-gray-800/50 backdrop-blur-md border-t border-gray-200/50 dark:border-gray-700/50">
-				<div className="max-w-6xl mx-auto px-6 py-4">
-					<div className="flex items-center justify-between">
-						<div>
-							<p className="text-sm text-gray-600 dark:text-gray-400">
+				<div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+					<div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0">
+						<div className="flex-1">
+							<p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
 								Ready to schedule?
 							</p>
-							<p className="text-lg font-semibold text-gray-800 dark:text-white">
+							<p className="text-sm sm:text-lg font-semibold text-gray-800 dark:text-white">
 								{formatDate(selectedPickupDate)} {selectedPickupTime} →{" "}
 								{formatDate(selectedDeliveryDate)} {selectedDeliveryTime}
 							</p>
@@ -259,7 +259,7 @@ export default function SchedulePage() {
 						<Link
 							href="/summary"
 							onClick={handleConfirmSchedule}
-							className="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 text-lg">
+							className="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 text-sm sm:text-lg w-full sm:w-auto text-center">
 							Confirm Schedule
 						</Link>
 					</div>
